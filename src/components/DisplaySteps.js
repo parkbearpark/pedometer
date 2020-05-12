@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 import { Pedometer } from 'expo-legacy'
 import dayjs from 'dayjs'
 
@@ -42,6 +42,14 @@ export default class DisplaySteps extends Component {
   }
 
   render() {
-    return <Text>{this.state.steps}</Text>
+    return <Text style={styles.text}>{this.state.steps}</Text>
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 100,
+    fontFamily: 'sans-serif',
+    color: '#FFFFFF',
+  },
+})
