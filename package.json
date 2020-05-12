@@ -19,7 +19,8 @@
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "dayjs": "^1.8.26"
+    "dayjs": "^1.8.26",
+    "react-native-dotenv": "^0.2.0"
   },
   "private": true
 }
