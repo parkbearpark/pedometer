@@ -4,8 +4,17 @@ import DisplaySteps from './src/components/DisplaySteps'
 
 export default function App() {
   return (
-    <View>
+    <View style={styles.container}>
       <DisplaySteps />
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFC9D2',
+  },
+})
