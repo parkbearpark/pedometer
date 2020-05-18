@@ -10,7 +10,6 @@ let twitter = new Twitter({
   consumer_key: process.env.API_KEY,
   consumer_secret: process.env.API_SECRET,
 })
-console.log(twitter)
 
 app.listen(3000, () => {
   console.log('Twitter login backend listening to port 3000')
@@ -55,8 +54,6 @@ app.get('/access-token', (req, res) => {
 })
 
 app.post('/post-tweet', (req) => {
-  console.log('request status', req.body.message)
-  console.log(twitter)
   twitter
     .post('statuses/update', {
       status: req.body.message,
