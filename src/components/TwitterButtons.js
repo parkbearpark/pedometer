@@ -71,7 +71,6 @@ function render({ steps }) {
   const onPostPress = async () => {
     const today = dayjs().format('YYYY/MM/DD')
     const message = `${today}の歩数: ${steps}\n#歩いた`
-    console.log(message)
 
     await axios
       .post(postTweetURL, {
