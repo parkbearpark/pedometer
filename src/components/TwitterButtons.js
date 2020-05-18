@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { View, Button, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
 import * as AuthSession from 'expo-auth-session'
 import dayjs from 'dayjs'
 import axios from 'axios'
@@ -81,27 +81,45 @@ function render({ steps }) {
 
   if (username === undefined) {
     return (
-      <View>
-        <Button onPress={onLogin} title="Twitterでログインする" />
+      <View style={styles.ButtonContainer}>
+        <TouchableOpacity style={styles.Button} onPress={onLogin}>
+          <Text style={styles.ButtonText}>Twitterでログインする</Text>
+        </TouchableOpacity>
       </View>
     )
   } else {
     return (
       <View>
-        <Button
-          style={styles.button}
-          onPress={onLogout}
-          title="Twitterからログアウトする"
-        />
-        <Button style={styles.button} onPress={onPostPress} title="Tweetする" />
+        <View style={styles.ButtonContainer}>
+          <TouchableOpacity style={styles.Button} onPress={onLogout}>
+            <Text style={styles.ButtonText}>Twitterからログアウトする</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.ButtonContainer}>
+          <TouchableOpacity style={styles.Button} onPress={onPostPress}>
+            <Text style={styles.ButtonText}>Tweetする</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  button: {
-    margin: 2,
+  ButtonContainer: {
+    justifyContent: 'center',
+    margin: 10,
+  },
+  Button: {
+    backgroundColor: '#FF00FF',
+    borderRadius: 5,
+    alignItems: 'center',
+    padding: 10,
+  },
+  ButtonText: {
+    textAlign: 'center',
+    fontFamily: 'sans-serif',
+    color: '#FFFFFF',
   },
 })
 
